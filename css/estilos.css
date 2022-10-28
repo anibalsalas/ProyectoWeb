@@ -8404,6 +8404,9 @@ h3, .h3 {
   font-size: 1.2rem;
   color: #f8f7f7; }
 
+h6, .h6 {
+  color: #ea2840; }
+
 p {
   font-size: 0.9rem;
   color: #f8f7f7; }
@@ -8411,18 +8414,30 @@ p {
 .cards1 {
   background-color: #212529; }
 
-.card2 {
-  border: 0px; }
-
+.card2,
 .card3 {
-  border: 0px;
-  width: 1300px !important; }
+  border: 0px; }
 
 .card-img-top {
   width: 80px; }
 
 .ofertas {
   width: 200px; }
+
+.cajax {
+  border: 1px solid #babacc; }
+  .cajax:hover {
+    -webkit-box-shadow: -1px 0px 11px -1px #232b1c;
+    -moz-box-shadow: -1px 0px 11px -1px #232b1c;
+    box-shadow: -1px 0px 11px -1px #232b1c;
+    transition-duration: 1s; }
+
+.flex {
+  gap: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center; }
 
 .fondo-oferta {
   background-color: #212529; }
@@ -8431,25 +8446,37 @@ p {
   object-fit: cover;
   width: 100%;
   height: 100%; }
+  @media screen and (max-width: media) {
+    .carrusel {
+      height: 200px !important; } }
+  @media screen and (max-width: media) {
+    .carrusel {
+      width: 200px !important; } }
+  @media screen and (max-width: media) {
+    .carrusel {
+      width: 200px !important; } }
+  @media screen and (max-width: media) {
+    .carrusel {
+      width: 200px !important; } }
 
-@media (max-width: 346px) {
-  .cajas1 {
-    display: flex;
-    flex-direction: column;
-    gap: 3px; }
-  .carrusel {
-    width: 200px !important; } }
-
-@media (max-width: 576px) {
-  .cajas1 {
-    display: flex;
-    flex-direction: column;
-    gap: 3px; } }
-
-@media (max-width: 768px) {
-  .cajas1 {
-    display: flex;
-    flex-direction: column;
-    gap: 5px; }
-  .carrusel {
-    height: 200px !important; } }
+.cajas1 {
+  display: flex;
+  flex-direction: row; }
+  @media screen and (max-width: media) {
+    .cajas1 {
+      display: flex;
+      flex-direction: column;
+      gap: 5px; } }
+  @media screen and (max-width: media) {
+    .cajas1 {
+      display: flex;
+      flex-direction: column;
+      gap: 3px; } }
+  @media screen and (max-width: media) {
+    .cajas1 {
+      width: 200px !important; } }
+  @media screen and (max-width: media) {
+    .cajas1 {
+      display: flex;
+      flex-direction: column;
+      gap: 2px; } }

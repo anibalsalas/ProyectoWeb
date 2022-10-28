@@ -4,7 +4,7 @@ $font-weight-bold: 700;
 $h3-font-size:1.20rem;
 $p-font-size:0.9rem;
 $dark: $gray-900;
-
+$color-oferta: #ea2840;
 
 
 *{
@@ -29,6 +29,9 @@ h3{
     font-size: $h3-font-size;
     color:  $primary;
 }
+h6{
+    color: $color-oferta;
+}
 p{
     font-size: $p-font-size;
     color: $primary;
@@ -39,14 +42,13 @@ p{
     background-color: $dark;
 }
 
-.card2{
+.card2,
+.card3
+{
     border: 0px;
  
 }
 
-.card3{
-    border: 0px;
-}
 .card-img-top{
     width: 80px;
  
@@ -57,48 +59,74 @@ p{
     width:200px;
 }
 
+.cajax{
+    border:1px solid #babacc;
+        &:hover{
+            -webkit-box-shadow: -1px 0px 11px -1px rgba(35,43,28,1);
+            -moz-box-shadow: -1px 0px 11px -1px rgba(35,43,28,1);
+            box-shadow: -1px 0px 11px -1px rgba(35,43,28,1);
+            transition-duration: 1s;
+        }
+}
+
+@mixin flexible ($dis, $direction, $corte, $just, $align){
+    display : $dis;
+    flex-flow : $direction $corte;
+    justify-content: $just;
+    align-items : $align
+}
+
+.flex{
+    gap:10px;
+    @include flexible( flex, row, nowrap, center, center)
+}
+
+
 .fondo-oferta{
     background-color: $dark;
 }
 
-.carrusel {
-  object-fit: cover;
-  width:100%;
-  height:100%;
+
+
+
+
+@mixin mv( $media : 346px){
+    @media screen and (max-width: media){
+        @content;
+    }
 }
 
-@media (max-width:346px){
-    .cajas1{
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-      }
-      
-      .carrusel {
-        width: 200px !important;
+.carrusel {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    @include mv(768px){ 
+        height: 200px !important;
     }
-} 
+    @include mv(576px){width: 200px !important;}
+    @include mv(480px){width: 200px !important; }
+    @include mv(){ width: 200px !important;}
+  }
 
-@media (max-width:576px){
-    .cajas1{
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-      }
-      
-
-} 
-
-@media (max-width:768px){
-    .cajas1{
+.cajas1{
+    display: flex;
+    flex-direction: row;
+    @include mv(768px){ 
         display: flex;
         flex-direction: column;
         gap: 5px;
-      }
-      .carrusel {
-        height: 200px !important;
-
     }
-   
+    @include mv(576px){ 
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+    @include mv(480px){ 
+        width: 200px !important;
+    }
+    @include mv(){ 
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
 }
-
