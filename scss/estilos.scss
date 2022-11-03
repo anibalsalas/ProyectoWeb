@@ -30,7 +30,7 @@ h3{
     color:  $primary;
 }
 h6{
-    color: $color-oferta;
+    color: $color-oferta
 }
 p{
     font-size: $p-font-size;
@@ -91,42 +91,51 @@ p{
 
 
 @mixin mv( $media : 346px){
-    @media screen and (max-width: media){
+    @media screen and (max-width: $media){
         @content;
     }
 }
 
 .carrusel {
-    object-fit: cover;
     width:100%;
-    height:100%;
     @include mv(768px){ 
-        height: 200px !important;
+        height: 200px ;
     }
-    @include mv(576px){width: 200px !important;}
-    @include mv(480px){width: 200px !important; }
-    @include mv(){ width: 200px !important;}
+    @include mv(576px){ height:200px !important;}
+    @include mv(480px){width: 100%;height:120px !important; }
+    @include mv(){  height:100px !important;}
   }
 
 .cajas1{
     display: flex;
     flex-direction: row;
-    @include mv(768px){ 
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-    @include mv(576px){ 
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-    }
-    @include mv(480px){ 
-        width: 200px !important;
-    }
-    @include mv(){ 
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
+  
+}
+
+.ofertas{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start ;
+    gap: 10px;
+}
+
+.flex-item{
+    width: 200px;
+}
+
+.vermasx{
+    display: inline-flex;
+    align-items: center;
+   
+
+}
+.vermas{    
+    color: #f50;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    text-decoration: underline;
+    &:hover{
+        color: rgb(173, 60, 4);
     }
 }
